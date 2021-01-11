@@ -1,20 +1,50 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Calculator
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Input Number</ion-label> 
+          <ion-input type="Number" [(ngModel)] ="first"> </ion-input>
+    </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-item>
+      <ion-label position="floating">input Number</ion-label> 
+      <ion-input type="Number" [(ngModel)] ="second"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Result: <span class="result" [innerHTML]="result"></span></ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+
+    <ion-row>
+
+      <ion-col>
+        <ion-button ion-button full (click)="addition()">+</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button  ion-button full (click)="subraction()">-</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button  ion-button full (click)="multiplied()">x</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button  ion-button full (click)="division()">/</ion-button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>
